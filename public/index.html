@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script
+    src="https://code.jquery.com/jquery-3.1.1.js"
+    integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+</head>
+<body>
+  <h1>Index</h1>
+
+  <input type="text" id="message">
+  <button id="createPost">Create</button>
+
+  <div id="posts">
+  </div>
+
+  <!--
+    By setting type to "text/template", it's not a script that the browser can understand,
+    and so the browser will simply ignore it.
+  -->
+  <script id="posts-template" type="text/template">
+    <ul>
+      <% posts.forEach(function(post) { %>
+        <li><%= post.message %></li>
+      <% }) %>
+    </ul>
+  </script>
+
+  <script src="main.js"></script>
+</body>
+</html>
